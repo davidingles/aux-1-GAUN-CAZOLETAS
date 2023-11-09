@@ -39,18 +39,21 @@ const Home: NextPage = () => {
         </Pau>
 
       </div> */}
-    
-      <div className={styles.canvas} style={{backgroundColor: '#878787', width:'90%'}}>
-       
+
+      <div className={styles.canvas} style={{ backgroundColor: '#000', width: '90%' }}>
+
         <div className={styles.container}>
           <h1 className={styles.titulo} style={estilos} >Auxiliar Manipuladora</h1>
         </div>
+
         <div className={styles.movil}>
           <h1 className={styles.telefono} style={estilos} >968 693 575</h1>
-        </div> 
+        </div>
+
         <Canvas
-          style={{ width: '100%', margin:'auto', height:'88vh', border:'2px solid black'}}
-          camera={{view: 
+          style={{ width: '100%', margin: 'auto', height: '88vh', border: '2px solid black' }}
+          camera={{
+            view:
             {
               enabled: true,
               fullWidth: 100,
@@ -60,21 +63,22 @@ const Home: NextPage = () => {
               width: 100,
               height: 100,
             }
-            ,  focus: 10, fov: 80 ,zoom: 6, position:[0, .5, 1.5]}} >
+            , focus: 10, fov: 80, zoom: 6, position: [0, .5, 1.5]
+          }} >
           {/* <focus-camera> */}
-          <ambientLight intensity={0.6} />
+          <ambientLight intensity={0.4} />
           <pointLight position={[10, 10, 10]} />
           {/* <directionalLight position={[-1, 0.5, 0]} /> */}
           <Suspense fallback={null}>
-          {/* <Environment far={10} files="/nieve.hdr" ground={{ height: 10, scale: 1 }} /> */}
-            
-              <Dav 
-                // className={styles.dav}
-                scale={.3}
-                position={[-.0,0.12,0]}
-                rotation={[Math.PI / 1000, 0, 0]}
-              />
-          
+            {/* <Environment far={10} files="/nieve.hdr" ground={{ height: 10, scale: 1 }} /> */}
+
+            <Dav
+              // className={styles.dav}
+              scale={.3}
+              position={[-.0, 0.12, 0]}
+              rotation={[Math.PI / 1000, 0, 0]}
+            />
+
           </Suspense>
           <OrbitControls autoRotate autoRotateSpeed={1} />
           <ContactShadows resolution={1024} scale={1} position={[0, -.01, 0]} blur={3} opacity={.3} far={1} color="#8a6246" />
